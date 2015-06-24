@@ -85,6 +85,18 @@ module.exports = function(grunt) {
       }
     },
 
+    criticalcss: {
+        custom: {
+            options: {
+                url: "dist/index.html",
+                width: 1200,
+                height: 900,
+                outputfile: "dist/critical.css",
+                filename: "dist/style.css"
+            }
+        }
+    },
+
     watch: {
       grunt: {
         options: {
@@ -110,7 +122,7 @@ module.exports = function(grunt) {
   /*grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');*/
 
-  grunt.registerTask('default', ['uglify', 'sass', 'copy', 'autoprefixer']);
+  grunt.registerTask('default', ['uglify', 'sass', 'copy', 'autoprefixer', 'criticalcss']);
   grunt.registerTask('start', ['browserSync', 'watch']);
   /*grunt.registerTask('default', ['build',' watch']);*/
 };

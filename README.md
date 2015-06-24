@@ -16,6 +16,7 @@ You'll need to have the following items installed before continuing.
   * [Matchdep] (<https://www.npmjs.com/package/matchdep>): `npm install matchdep --save-dev`
   * [Autoprefixer] (<https://www.npmjs.com/package/autoprefixer>): `npm install grunt-autoprefixer --save-dev`
   * [CSSMin] (<https://www.npmjs.com/package/grunt-contrib-cssmin>): `npm install grunt-contrib-cssmin --save-dev`
+  * [Critical CSS] (<https://www.npmjs.com/package/grunt-criticalcss>): `npm install grunt-criticalcss --save-dev`
   * [BrowserSync] (<https://www.npmjs.com/package/browser-sync>): `npm install browser-sync --save-dev`
 
 ## Quickstart
