@@ -1,0 +1,11 @@
+// Media Queries
+@mixin mq($point, $query1: min, $query2: width) {
+    @media screen and (#{$query1}-#{$query2}: em-calc($point) + em-calc(1)) {
+        @content;
+    }
+}
+@mixin min-max-mq($point1:0, $point2:0) {
+    @media screen and (min-width: em-calc($point1) + em-calc(1)) and (max-width: em-calc($point2)) {
+        @content;
+    }
+}

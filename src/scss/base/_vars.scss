@@ -1,0 +1,28 @@
+/* Sizes */
+$width-max-row: rem-calc(1100);
+
+/* Margins */
+$margin-bottom-paragraph: rem-calc(20);
+
+/* Colors */
+$color-bg-body: #fff;
+
+$color-bg-panel: #e4e4e4;
+
+$color-primary: #6fbcc4;
+$color-secondary: #fbaf5d;
+
+$color-font: #333;
+
+/* Typefaces */
+$font-stack-regular: 'Helvetica Neue', sans-serif;
+
+/* Styles */
+$style-border-panel: none;
+
+/* Breakpoints */
+$breakpoint-x-small: 480;
+$breakpoint-small: 640;
+$breakpoint-medium: 1024;
+$breakpoint-large: 1440;
+$breakpoint-x-large: 1920;

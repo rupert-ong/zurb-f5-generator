@@ -1,0 +1,12 @@
+body {
+  background: purple;
+  backface-visibility: hidden;
+
+  @include mq($breakpoint-small) {
+    background: blue;
+  }
+
+  @include mq($breakpoint-large) {
+    background: green;
+  }
+}
