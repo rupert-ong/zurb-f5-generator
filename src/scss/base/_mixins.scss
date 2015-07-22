@@ -9,3 +9,57 @@
         @content;
     }
 }
+
+@mixin link-colors($normal, $hover:false, $active:false, $visited:false) {
+  color: $normal;
+
+  @if ($hover) {
+    &:hover {
+      color: $hover;
+    }
+  }
+
+  @if ($active) {
+    &:active {
+      color: $active;
+    }
+  }
+
+  @if ($visited) {
+    &:visited {
+      color: $visited;
+    }
+  }
+}
+
+// Utilities
+@mixin center-horizontal() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-vertical() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-both() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+}
