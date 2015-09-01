@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'dist/lib/modernizr.min.js':  [
+          'dist/libs/modernizr.min.js':  [
                                                 'bower_components/modernizr/modernizr.js'
                                               ],
           'dist/js/plugins.min.js':           [
@@ -74,6 +74,7 @@ module.exports = function(grunt) {
     },
 
     browserSync: {
+      // For static files
       bsFiles: {
         src : ['dist/*.css', 'dist/*.html', 'dist/*.php']
       },
@@ -83,9 +84,19 @@ module.exports = function(grunt) {
           baseDir: "dist"
         }
       }
+      // For files on a server (like MAMP)
+      /*dev: {
+        bsFiles: {
+          src: ['dist/*.css', 'dist/*.html', 'dist/*.php']
+        }, 
+        options: {
+          watchTask: true,
+          proxy: "localhost/your-folder/"
+        }
+      }*/
     },
 
-    criticalcss: {
+    /*criticalcss: {
         custom: {
             options: {
                 url: "dist/index.html",
@@ -95,7 +106,7 @@ module.exports = function(grunt) {
                 filename: "dist/style.css"
             }
         }
-    },
+    },*/
 
     watch: {
       grunt: {
@@ -122,7 +133,7 @@ module.exports = function(grunt) {
   /*grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');*/
 
-  grunt.registerTask('default', ['uglify', 'sass', 'copy', 'autoprefixer', 'criticalcss']);
+  grunt.registerTask('build', ['uglify', 'sass', 'copy', 'autoprefixer'/*, 'criticalcss'*/]);
   grunt.registerTask('start', ['browserSync', 'watch']);
   /*grunt.registerTask('default', ['build',' watch']);*/
 };
