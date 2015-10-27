@@ -1,0 +1,27 @@
+$height-footer: rem-calc(50) !default;
+
+@include mq($breakpoint-small) {
+	* {
+		margin: 0;
+	}
+
+	html, body {
+		height: 100%;
+	}
+
+	.wrap-page {
+		margin-bottom: -($height-footer);
+		min-height: 100%;
+
+		&:after {
+			content:"";
+			display: block;
+			height: $height-footer;
+		}
+	}
+
+	.footer-sticky {
+		height: $height-footer;
+		background: orange;
+	}
+}

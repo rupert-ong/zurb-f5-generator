@@ -1,11 +1,11 @@
 // Media Queries
 @mixin mq($point, $query1: min, $query2: width) {
-    @media screen and (#{$query1}-#{$query2}: em-calc($point) + em-calc(1)) {
+    @media screen and (#{$query1}-#{$query2}: ($point/16 * 1em) + (1/16 * 1em)) {
         @content;
     }
 }
 @mixin min-max-mq($point1:0, $point2:0) {
-    @media screen and (min-width: em-calc($point1) + em-calc(1)) and (max-width: em-calc($point2)) {
+    @media screen and (min-width: ($point1/16 * 1em) + (1/16 * 1em)) and (max-width: $point2/16 * 1em) {
         @content;
     }
 }
@@ -33,23 +33,20 @@
 }
 
 // Utilities
-@mixin center-horizontal() {
+@mixin center($p:"xy") {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@mixin center-vertical() {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-@mixin center-both() {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  @if $p == "x" {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $p == "y" {
+    top: 50%;
+    transform: translateY(-50%);
+  } else { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
 }
 
 @mixin aspect-ratio($width, $height) {
