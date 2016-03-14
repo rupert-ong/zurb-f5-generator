@@ -1,8 +1,21 @@
-# Foundation Generator (Libsass)
+# Zurb Foundation 5 Generator
 
-This is a template to start a Foundation project that uses Grunt and libsass.
+This is a template to jump-start a Foundation (version 5) project that uses a [Grunt](http://gruntjs.com) based workflow, concatenating and minifying your JavaScript and preprocessing your CSS with Sass (using Libsass). It also includes several utility mixins and a [BrowserSync](https://www.npmjs.com/package/browser-sync) workflow for debugging across multiple browsers.
 
-## Requirements
+**Please note:** This repo is for [Zurb Foundation 5](http://foundation.zurb.com/sites/docs/v/5.5.3/). It was hosted on a private BitBucket account for internal use at my former place of work. 
+
+As it currently stands, this repo is strictly for *educational and archival purposes*, but if I decide to keep using Foundation for quick prototypes and websites, I'll definitely port this to the [Foundation for Sites 6](http://foundation.zurb.com/sites.html).
+
+## Table of contents
+
+* [Dependencies](#dependencies)
+* [Quick start](#quick-start)
+* [Directory Structure](#directory-structure)
+* [Contributors](#contributors)
+* [Contributing](#contributing)
+* [Copyright and license](#copyright-and-license)
+
+## Dependencies
 
 You'll need to have the following items installed before continuing.
 
@@ -19,10 +32,10 @@ You'll need to have the following items installed before continuing.
   * [Critical CSS](<https://www.npmjs.com/package/grunt-criticalcss>): `npm install grunt-criticalcss --save-dev`
   * [BrowserSync](<https://www.npmjs.com/package/browser-sync>): `npm install browser-sync --save-dev`
 
-## Quickstart
+## Quick start
 
 ```bash
-git clone https://mssm-rupert@bitbucket.org/montanasteele/foundation-libsass-generator.git
+git clone https://github.com/rupert-ong/zurb-f5-generator.git
 npm install && bower install
 ```
 
@@ -36,6 +49,25 @@ To watch a project and use BrowserSync, run:
 
 ## Directory Structure
 
+**CSS/SCSS Structure**  
+
   * `scss/base/_settings.scss`: Foundation configuration settings go in here
   * `scss/_app.scss`: Foundation styles to include go here
-  * `scss.style.scss`: Application styles go here
+  * `scss/style.scss`: Imported application styles go here
+  
+## Contributors
+
+**Rupert Ong**
+
+* <https://twitter.com/rupertong>
+* <https://github.com/rupert-ong>
+
+## Contributing
+
+If you find this repo useful and wish to add or continue where I left off, feel free to fork it and make a pull request. Happy coding everyone!
+
+## Copyright and license
+
+Foundation Framework: &copy;2016 Zurb. All rights reserved.
+
+Zurb Foundation 5 Generator is released under the [MIT License](http://www.opensource.org/licenses/MIT).
