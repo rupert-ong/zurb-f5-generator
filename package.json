@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://mssm-rupert@bitbucket.org/montanasteele/foundation-libsass-generator.git"
+    "url": "https://github.com/rupert-ong/zurb-f5-generator.git"
   },
   "devDependencies": {
     "node-sass": "~2.0.1",
