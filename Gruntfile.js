@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'dist/libs/modernizr.min.js':  [
+          'dist/libs/modernizr.min.js':       [
                                                 'bower_components/modernizr/modernizr.js'
                                               ],
           'dist/js/plugins.min.js':           [
@@ -130,10 +130,6 @@ module.exports = function(grunt) {
     }
   });
 
-  /*grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');*/
-
   grunt.registerTask('build', ['uglify', 'sass', 'copy', 'autoprefixer'/*, 'criticalcss'*/]);
   grunt.registerTask('start', ['browserSync', 'watch']);
-  /*grunt.registerTask('default', ['build',' watch']);*/
 };
