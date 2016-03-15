@@ -11,6 +11,7 @@ As it currently stands, this repo is strictly for *educational and archival purp
 * [Dependencies](#dependencies)
 * [Quick start](#quick-start)
 * [Directory Structure](#directory-structure)
+* [Grunt Plugins](#grunt-plugins)
 * [Contributors](#contributors)
 * [Contributing](#contributing)
 * [Copyright and license](#copyright-and-license)
@@ -22,6 +23,67 @@ You'll need to have the following items installed before continuing.
   * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
   * [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
   * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
+
+## Quick start
+To get up and running, enter the following in the command line to clone the repo and install the required packages:
+
+```bash
+git clone https://github.com/rupert-ong/zurb-f5-generator.git
+npm install
+bower install
+```
+**Adding JavaScript and jQuery files or plugins:**
+
+Edit the `Gruntfile.js` to include any other jQuery or JavaScript files or plugins you wish to minify and concatenate in the uglify object. For example:
+
+```
+grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
+    uglify: {
+      dist: {
+        files: {
+          'dist/libs/modernizr.min.js':       [
+                                                'bower_components/modernizr/modernizr.js'
+                                              ],
+          'dist/js/plugins.min.js':           [
+                                                'bower_components/foundation/js/vendor/fastclick.js',
+                                                'src/lib/your-javascript-library.js
+                                              ],
+          'dist/js/app.min.js':               [
+                                                'bower_components/foundation/js/foundation/foundation.js',
+                                                'src/js/app.js'
+                                              ]
+        }
+      }
+    },
+    ...
+```
+
+**To compile your project, run:**
+
+`grunt build`
+
+**To watch a project and use BrowserSync, run:**
+
+`grunt start`
+
+## Directory Structure
+Below are the relevant core files you will edit and access in the `src` directory. You can add other files or folders as you need for this project.
+
+**SCSS Structure**  
+
+  * `scss/base/_settings.scss`: Foundation configuration settings go in here
+  * `scss/_app.scss`: Foundation styles to include go here
+  * `scss/style.scss`: Imported application styles go here
+
+**JS Structure**  
+
+  * `js/app.js`: Core JavaScript logic goes here
+
+## Grunt plugins
+These are the plugins used in the Grunt workflow:
+
   * [Uglify](<https://www.npmjs.org/package/grunt-contrib-uglify>): `npm install grunt-contrib-uglify --save-dev` 
   * [Grunt Sass](<https://www.npmjs.com/package/grunt-sass>): `npm install grunt-sass --save-dev`
   * [Watch](<https://www.npmjs.org/package/grunt-contrib-watch>): `npm install grunt-contrib-watch --save-dev`
@@ -32,29 +94,6 @@ You'll need to have the following items installed before continuing.
   * [Critical CSS](<https://www.npmjs.com/package/grunt-criticalcss>): `npm install grunt-criticalcss --save-dev`
   * [BrowserSync](<https://www.npmjs.com/package/browser-sync>): `npm install browser-sync --save-dev`
 
-## Quick start
-
-```bash
-git clone https://github.com/rupert-ong/zurb-f5-generator.git
-npm install && bower install
-```
-
-While you're working on your project, run:
-
-`grunt`
-
-To watch a project and use BrowserSync, run:
-
-`grunt start`
-
-## Directory Structure
-
-**CSS/SCSS Structure**  
-
-  * `scss/base/_settings.scss`: Foundation configuration settings go in here
-  * `scss/_app.scss`: Foundation styles to include go here
-  * `scss/style.scss`: Imported application styles go here
-  
 ## Contributors
 
 **Rupert Ong**
